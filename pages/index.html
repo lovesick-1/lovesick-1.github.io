@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/nav.css">
+</head>
+
+<body>
+    <div class="w" id="all">
+        <div class="h1">
+            <div id="h1_left1">
+                <div id="head_img">
+                    <img src="../img/头像/1.jpg" alt="">
+                </div>
+                
+                <div id="desc">
+                    <span id="title">宋兴睿的主页</span>
+                    <p><span>性别</span><br><span>男</span></p>
+                    <p><span>年龄</span><br><span>20</span></p>
+                    <p><span>城市</span><br><span>武汉</span></p>
+                </div>
+
+                <div id="qq_music">
+                    <img src="../img/music_log/qq_music2.png" alt="">
+                    <span>LOVE MUSIC</span>
+                </div>
+                <div id="music_imgs">
+                    <img src="../img/music_log/music2.png" alt="">
+                    <img src="../img/music_log/wechat.png" alt="">
+                    <img src="../img/music_log/music1.jpg" alt="">
+                    <img src="../img/music_log/yunMusic.png" alt="">
+                </div>
+
+                <div id="bc_theme" onclick="ChangeBackgrade('#535353')">
+                    
+                </div>
+                
+            </div>
+
+            <div id="h1_left2">
+                <!-- 轮播图 -->
+                <div id="container">
+                    <ul class="parent" style="left: 0;">
+                        <li><img src="../img/index_Img/1.jpg"></li>
+                        <li><img src="../img/index_Img/2.jpg"></li>
+                        <li><img src="../img/index_Img/3.jpg"></li>
+                        <li><img src="../img/index_Img/4.jpg"></li>
+                        <li><img src="../img/index_Img/2.jpg"></li>
+                    </ul>
+                
+                    <div class="btnLeft">&lt;</div>
+                    <div class="btnRight">&gt;</div>
+                    <div class="modal">
+
+                        <div class="dots">
+                            <ul class="clearfix">
+                                <li class="on"></li>
+                                <li class="off"></li>
+                                <li class="off"></li>
+                                <li class="off"></li>
+                                <li class="off"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="h1_left3">
+                <div class="bc">
+                </div>
+                <div class="content">
+                    <marquee  direction=left   scrollamount=4 >good good study &nbsp;&nbsp;&nbsp; day day up</marquee>
+                </div>
+                <div class="ownContent">
+                    <ul>
+                        <li>姓名 <span>宋兴睿</span></li>
+                        <li>专业 <span>数据科学与大数据技术</span></li>
+                        <li>学校 <span>江汉大学</span></li>
+                        <li>最喜欢的电影 <span>触不可及</span></li>
+                        <li>最喜欢的音乐 <span>海阔天空</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="h2">
+            <div id="h2_left1">
+                <!-- 时间 -->
+                <div class="time">
+                    <div class="hour"></div>
+                    <span>:</span>
+                    <div class="mint"></div>
+                </div>
+
+                <!-- 搜索框 -->
+                <div class="search">
+                    <input type=text autocomplete="off" autofocus id="search_input" onkeydown="entersearch(event)">
+                    <div class="but"  onclick=" search()"></div>
+                </div>
+
+                <!-- 应用框 -->
+                <div class="m">
+                        <div class="close">
+                       
+                        </div>
+                </div>
+                <div class="method">
+                    <!-- <a id="link" href="javascript:;">
+                        M
+                    </a> -->
+                    <span>M</span>
+                </div>
+
+            </div>
+
+            <div id="h2_left2">
+                <canvas id="canvas" style="width: 280; height: 415;"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- 侧边栏导航栏 -->
+        <div class="shell">
+            <a href="../pages/index.html" class="box"><i class="iconfont icon-home"></i><span> home</span></a>
+            <a href="../pages/music.html" class="box"><i class="iconfont icon-music"></i><span>music</span></a>
+            <a href="../pages/myPicture.html" class="box"><i class="iconfont icon-picture"></i><span>picture</span></a>
+            <a href="../pages/login.html" class="box"><i class="iconfont icon-login"></i><span>login</span></a>
+            <a href="#" class="box"><i class="iconfont icon-contact"></i><span>contact</span></a>
+        </div>
+
+        <div class="gif"> <img src="../img/index_Img/iloli.gif" alt=""></div>
+
+
+
+<script>
+    // 轮播图
+function lunbotu(){
+    var imgShow = document.getElementsByClassName('parent')[0],
+	dotList = document.querySelectorAll('.dots >.clearfix > li');
+var btnLeft = document.getElementsByClassName('btnLeft')[0],
+    btnRight = document.getElementsByClassName('btnRight')[0];
+var dotLen = dotList.length,
+	index = 0; //轮播层的图片索引，0表示第一张
+
+//圆点显示
+function showRadius() {
+	for(var i = 0; i < dotLen; i++) {
+		if(dotList[i].className === "on"){
+			dotList[i].className = "off";
+		}
+	}
+	dotList[index].className = "on";
+}
+
+//向左移动
+btnLeft.onclick = function() {
+	index--;
+    if(index < 0){  /*第1张向左时，变为第5张*/
+        index = 4;
+    }
+    showRadius();
+	var left;
+	var imgLeft = imgShow.style.left;
+	if(imgLeft === "0px") { /*当是第1张时，每张图片左移，移4张图，位置为-(4*500)*/
+		left = -2000;
+	}
+	else{
+		left = parseInt(imgLeft) + 500; /*由于left为负数，每左移一张加500*/
+	}
+	imgShow.style.left = left + "px";
+}
+
+//向右移动
+btnRight.onclick = function() {
+	index++;
+    if(index > 4){  /*第5张向右时，变为第1张*/
+        index = 0;
+    }
+    showRadius();
+	var right;
+	var imgLeft = imgShow.style.left;
+	if(imgLeft === "-2000px") { /*当是第5张时，第1张的位置为0*/
+		right = 0;
+	}
+	else{
+		right = parseInt(imgLeft) - 500; /*由于left为负数，每右移一张减500*/
+	}
+	imgShow.style.left = right + "px";
+}
+
+// 自动轮播
+var timer;
+function autoPlay() {
+	timer = setInterval(function() {
+		var right;
+		var imgLeft = imgShow.style.left;
+		if(imgLeft === "-2000px") {
+			right = 0;
+		}
+		else{
+			right = parseInt(imgLeft) - 500;
+		}
+		imgShow.style.left = right + "px";
+	} ,10000)
+}
+autoPlay();
+
+for(var i = 0; i < dotLen; i++) {
+    /*利用闭包传递索引*/
+    (function(i) {
+        dotList[i].onclick = function() {
+	        var dis = index - i; //当前位置和点击的距离
+	        imgShow.style.left = (parseInt(imgShow.style.left) + dis * 500) + "px";
+	        index = i; //显示当前位置的圆点
+	        showRadius();
+    	}
+    })(i);
+}
+}
+
+lunbotu();
+
+// 搜索框
+function search() {
+        if (document.getElementById("search_input").value != "") {
+        window.location.href = "https://www.sogou.com/web?query=" + document.getElementById("search_input").value;
+        document.getElementById("search_input").value = "";
+        }
+    }
+
+function entersearch(event){
+    if (event.keyCode == 13){
+    search();
+    }
+}
+
+
+//时间
+function getNowTime(){
+        var hour = document.querySelector(".hour");
+        var minute = document.querySelector(".mint");
+
+        time();
+        setInterval(time,1000);
+        function time(){
+            var nowTime = new Date();//返回的是当前时间总的毫秒数
+
+            var h = change(nowTime.getHours()); //时
+            var m = change(nowTime.getMinutes()); // 分
+
+
+            hour.innerHTML = h;
+            minute.innerHTML = m;
+
+        }
+        function change(n){
+            if(n<10){
+                return '0'+n;
+            }else{
+                return n;
+            }
+        }
+    }
+    getNowTime()
+
+
+
+
+    var method = document.querySelector('.method');  
+    var m = document.querySelector(".m");
+    var closes = document.querySelector(".close");
+
+    method.onclick=function(){
+        m.style.display='block';
+        method.style.display='none';
+    }
+    closes.onclick=function(){
+        m.style.display='none';
+        method.style.display='block';
+    }
+    
+
+
+
+</script>
+<script src="../js/game.js"></script>
+</body>
+</html>

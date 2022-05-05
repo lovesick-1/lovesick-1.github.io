@@ -1,0 +1,412 @@
+.w {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+body{
+    background-image: linear-gradient(135deg, #727089, #c3565f);
+}
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?ykzif2');
+    src:  url('../fonts/icomoon.eot?ykzif2#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?ykzif2') format('truetype'),
+      url('../fonts/icomoon.woff?ykzif2') format('woff'),
+      url('../fonts/icomoon.svg?ykzif2#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+#all{
+    height: 1000px;
+    position: relative;
+    top: 100px;
+}
+
+/* 第一排 第一个盒子 */
+#h1_left1{
+    width: 200px;
+    height: 320px;
+    background-color: #fff;
+    float: left;
+    border-radius: 10px;
+}
+#head_img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: red;
+    overflow: hidden;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+#head_img img{
+    width: 100px;
+    height: 100px;
+}
+#desc{
+    font-size: 12px;
+    font-weight: 700;
+    color: black;
+    text-align: left;
+}
+#desc>p{
+    display: inline-block;
+    margin-left: 10px;
+}
+#desc>p>span{
+    padding: 0 15px;
+
+}
+
+#desc>span{
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+#qq_music{
+    height: 35px;
+    width: 165px;
+    background-color: #00d0a7;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: #fff;
+}
+#qq_music>span{
+    
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 10px;
+
+}
+
+
+#qq_music img{
+    height: 25px;
+    margin-top: -5px;
+    margin-left: 20px;
+
+}
+
+#music_imgs{
+    height: 35px;
+    width: 165px; 
+    margin-left: 35px;
+    margin-top: 4px;
+}
+
+#music_imgs img{
+    display: inline-block;
+    width: 20px;
+    margin: 2px 5px;
+}
+#bc_theme::after{
+    font-family: 'icomoon';
+    content: "\e9ea";
+    font-size: 25px;
+    margin-left: 89px;
+    display: block;
+    margin-top: -8px;
+}
+
+#bc_theme:hover{
+    background-image: -webkit-linear-gradient(135deg, white, #363636) ;
+    /* border-radius: 50px; */
+}
+/* 第一排 第二个盒子 */
+#h1_left2{
+    position: relative;
+    width: 490px;
+    height: 320px;
+    background-color: #fff;
+    float: left; 
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+
+#container{
+    position: relative;
+    top: -20px;
+    width: 490px;
+    height: 320px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden; /*溢出隐藏：只显示一张图片*/
+}
+#container .parent{
+    position: absolute;
+    width: 2500px; /*整个图片层长度：500*5=2500*/
+    height: 320px;
+}
+
+#container .parent li{
+    float: left;
+    width: 500px;
+    height: 100%;
+}
+#container .parent li img{
+    width: 100%;
+    height: 100%;
+}
+#container:hover .btnLeft,
+#container:hover .btnRight{
+    display: block;
+}
+
+#container .btnLeft,
+#container .btnRight{
+    display: none;
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, .3);
+    border-radius: 20%;
+    opacity: 80%;
+    position: absolute; /*包含块为图片显示层container*/
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+}
+#container .btnLeft{
+    left: 0px;
+}
+#container .btnRight{
+    right: 00px;
+}
+#container .btnLeft:hover,
+#container .btnRight:hover{
+    opacity: 90%;
+    cursor: pointer;
+    color: red;
+}
+
+#container .modal .dots{
+    float: right;
+    position: absolute;
+    bottom: 10px;
+    left: 340px;
+}
+#container .modal .dots li{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    /*可以使用行块盒*/
+    /*display: inline-block;*/
+    margin: 0 5px;
+    cursor: pointer;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.on{
+    background-color: white;
+}
+.off{
+    background: rgba(0, 0, 0, .3);
+}
+
+
+
+
+/* 第一排 第三个盒子 */
+#h1_left3{
+    position: relative;
+    width: 290px;
+    height: 320px;
+    background-color: #fff;
+    margin-left: 10px;
+    float: left;
+    border-radius: 10px;
+}
+
+.bc{
+    width: 290px;
+    height: 100px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: url(../img/index_Img/bc.jpg) ;
+}
+.content{
+    width: 200px;
+    position: absolute;
+    top: 155px;
+    left: 45px;
+    color:#e041a8;
+    font-size: 20px;
+}
+
+.ownContent{
+    position: absolute;
+    top: 190px;
+    left: 20px;
+    font-size: 15px;
+    font-family:"楷体"
+}
+.ownContent span{
+    font-family:"宋体";
+    position: absolute;
+    right: -160px;
+}
+/* 第二排 第一个盒子 */
+#h2_left1{
+    position: relative;
+    width: 700px;
+    height: 435px;
+    background-color: #fff;
+    margin-top: 10px;
+    float: left;
+    border-radius: 10px;
+    color: black;
+    background: url(../img/index_Img/1.jpg) ;
+    background-size: 700px 435px;
+}
+
+.search{
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 500px;
+    height: 50px;
+    /* background-color: pink; */
+    border-radius: 50px;
+    box-shadow: 1px 1px 10px 1px rgb(157, 157, 157); 
+    background-color: #fff;
+
+}
+.search input{
+    width: 400px;
+    height: 40px;
+    /* background-color: green; */
+    /* border: 1px solid gray; */
+    position: absolute;
+    top: 5px;
+    left: 30px;
+}
+.but{
+    position: absolute;
+    right:15px;
+    top: 2px;
+    width: 47px;
+    height: 47px;
+    border-radius: 10px;
+    /* background-color: #0087ff; */
+
+}
+
+.search div::after{
+    display: block;
+    font-family: "icomoon";
+    content: "\e99c";
+    font-size: 25px;
+    color: gray;
+    width: 50px;
+    height: 50px;
+    left: 10px;
+    top: 5px;
+    position: absolute;
+}
+.but:hover{
+cursor: pointer;
+}
+
+.hour,.mint{
+    display: inline-block;
+    color: #fff;
+    font-size: 40px;
+
+}
+.time span{
+    color: #fff;
+    font-size: 40px;
+}
+.time{
+    position: relative;
+    left: 290px;
+    top: 30px;
+}
+
+.method{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(35, 50, 65,0.2) ;
+    /* opacity: 0.3; */
+    position: absolute;
+    left: 325px;
+    top: 280px;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+.method:hover{
+    background-color: rgb(35, 50, 65,0.4) ;
+    cursor: pointer;
+    
+}
+.method span{
+    position: absolute;
+    top: -7px;
+    left: 5px;
+}
+.m{
+    position: absolute;
+    display: none;
+    width: 500px;
+    height: 110px;
+    background-color: rgb(35, 50, 65,0.2) ;
+    border-radius: 10px;
+    left: 100px;
+    top: 160px;
+}
+.close{
+    position: absolute;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+}
+.close:hover{
+    font-size: 15px;
+    cursor: pointer;
+}
+.close::after{
+    font-family: 'icomoon';
+    content: '\ea4b';
+    color: #fff;
+    position: absolute;
+    right: 0px;
+}
+/* 第二排 第二个盒子 */
+#h2_left2{
+    position: relative;
+    width: 290px;
+    height: 435px;
+    background-color: #fff;
+    margin-left: 10px;
+    margin-top: 10px;
+    float: left;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+
+/* 动态图 */
+.gif img{
+    position: absolute;
+    right: 220px;
+    top: 120px;
+    width: 100px;
+    /* height: 200px; */
+}

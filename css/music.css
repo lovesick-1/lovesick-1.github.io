@@ -1,0 +1,374 @@
+.w {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+body{
+    background-image: linear-gradient(135deg, #727089, #c3565f);
+}
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?ykzif2');
+    src:  url('../fonts/icomoon.eot?ykzif2#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?ykzif2') format('truetype'),
+      url('../fonts/icomoon.woff?ykzif2') format('woff'),
+      url('../fonts/icomoon.svg?ykzif2#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+#all{
+    height: 1000px;
+    position: relative;
+    top: 100px;
+}
+
+/* 第一排 第一个盒子 */
+#h1_left1{
+    width: 200px;
+    height: 320px;
+    background-color: #fff;
+    float: left;
+    border-radius: 10px;
+}
+#head_img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: red;
+    overflow: hidden;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+#head_img img{
+    width: 100px;
+    height: 100px;
+}
+#desc{
+    font-size: 12px;
+    font-weight: 700;
+    color: black;
+    text-align: left;
+}
+#desc>p{
+    display: inline-block;
+    margin-left: 10px;
+}
+#desc>p>span{
+    padding: 0 15px;
+
+}
+
+#desc>span{
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#qq_music{
+    height: 35px;
+    width: 165px;
+    background-color: #00d0a7;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: #fff;
+}
+#qq_music>span{
+    
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+#qq_music img{
+    height: 25px;
+    margin-top: 0px;
+    margin-left: 20px;
+
+}
+#music_imgs{
+    height: 35px;
+    width: 165px; 
+    margin-left: 35px;
+    margin-top: 4px;
+}
+
+#music_imgs img{
+    display: inline-block;
+    width: 20px;
+    margin: 2px 5px;
+}
+#bc_theme::after{
+    font-family: 'icomoon';
+    content: "\e9ea";
+    font-size: 25px;
+    margin-left: 89px;
+    display: block;
+    margin-top: -8px;
+
+}
+
+#bc_theme:hover{
+    background-image: -webkit-linear-gradient(135deg, white, #363636) ;
+    /* border-radius: 50px; */
+}
+/* 第一排 第二个盒子 */
+#h1_left2{
+    position: relative;
+    width: 490px;
+    height: 320px;
+    background-color: #fff;
+    float: left; 
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+#h1_left2 #tit{
+    /* display: inline-block; */
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    position: absolute;
+    left: 200px;
+    top: 5px;
+}
+
+#h1_left2 video{
+    position: absolute;
+    width: 490px;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 10px;
+
+}
+
+/* 第一排 第三个盒子 */
+#h1_left3{
+    position: relative;
+    width: 290px;
+    height: 320px;
+    background-color: #fff;
+    margin-left: 10px;
+    float: left;
+    border-radius: 10px;
+}
+
+#h1_left3 ul li audio{
+    position: absolute;
+    width: 270px;
+    height: 35px;
+    bottom: 10px;
+    left: 10px;
+}
+
+.audio-views{
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    background-color: red;
+    left: 50px;
+    top: 30px;
+    border-radius: 50%;
+    background: radial-gradient(#000, #484140, #000);
+}
+
+.audio-views img{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    left: 45px;
+    top: 45px;
+}
+
+#controller{
+    position: absolute;
+    width: 270px;
+    height: 40px;
+    background-color: #ffffff;
+    bottom: 47px;
+    left: 10px;
+    border-radius: 30px;
+    box-shadow: 1px 1px 10px 1px rgb(157, 157, 157); 
+}
+#c1{
+    position: absolute;
+    /* background-color: black; */
+    width: 20px;
+    height: 20px;
+    left: 85px;
+    top: 10px;
+}
+#c2{
+    position: absolute;
+    /* background-color: green; */
+    width: 20px;
+    height: 20px;
+    left: 125px;
+    top: 10px;
+}
+
+
+#c3{
+    position: absolute;
+    /* background-color: yellow; */
+    width: 20px;
+    height: 20px;
+    left: 165px;
+    top: 10px;
+}
+
+#c1::after{
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\ea23";
+    color: green;
+    font-size: 25px;
+    top: -9px;
+}
+
+#c2::after{
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\ea1d";
+    color: green;
+    font-size: 22px;
+    top: -7px;
+}
+
+#c3::after{
+    position: absolute;
+    font-family: 'icomoon';
+    content: "\ea24";
+    color: green;
+    font-size: 25px;
+    top: -9px;
+}
+/* 第二排 第一个盒子 */
+#h2_left1{
+    width: 700px;
+    height: 435px;
+    background-color: #fff;
+    margin-top: 10px;
+    float: left;
+    border-radius: 10px;
+    color: black;
+}
+
+#h2_left1 ul div{
+    position: relative;
+    width: 98%;
+    height: 57px;
+    /* background-color: red; */
+
+    margin-top: 1px;
+}
+
+#h2_left1 ul div::after{
+    content: '';
+    width: 70%;
+    height: 1px;
+    display: block;
+    padding-top: 56px;
+    border-bottom: 1px solid #363636;
+}
+#h2_left1 div:hover{
+    background-color: #363636;
+}
+
+#h2_left1 div:hover span{
+    color: #fff;
+}
+
+.name {
+    font-size: 16px;
+    /* color: black; */
+    display: inline;
+    position: absolute;
+    left: 70px;
+    top: 3px;
+
+}
+.music_name{
+    position: absolute;
+    font-size: 1px;
+    /* color: black; */
+    left: 110px;
+    top: 29px;
+
+}
+.music_name::before{
+    font-family: 'icomoon';
+    content: "\e9f0 ";
+    color: #e76d63;
+    position: absolute;
+    left: -38px;
+    top: 1px;
+}
+.music_name::after{
+    font-family: 'icomoon';
+    content: "\eacc";
+    color: green;
+    position: absolute;
+    left: -20px;
+    top: 1px;
+}
+#h2_left1 ul img{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 15px;
+    top: 2px;
+    left: 2px;
+}
+#h2_left1 ul #titl{
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    margin-left: 310px;
+}
+
+
+
+/* 第二排 第二个盒子 */
+#h2_left2{
+    position: relative;
+    width: 290px;
+    height: 435px;
+    background-color: #fff;
+    margin-left: 10px;
+    margin-top: 10px;
+    float: left;
+    border-radius: 10px;
+}
+
+#h2_left2 img{
+    width: 290px;
+    height: 435px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#h2_left2>span{
+    position: absolute;
+    font-size: 30px;
+    left: 95px;
+    background-image: -webkit-linear-gradient(135deg, black, #fca154);
+    -webkit-background-clip: text;
+    color: transparent;
+    top: -6px;
+
+}
+
+
+/* 动态图 */
+.gif img{
+    position: fixed;
+    right: 0px;
+    top: 450px;
+    width: 130px;
+    /* height: 200px; */
+}

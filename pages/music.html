@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/music.css">
+    <link rel="stylesheet" href="../css/nav.css">
+
+</head>
+<body>
+    <div class="w" id="all">
+        <div class="h1">
+            <div id="h1_left1">
+                <div id="head_img">
+                    <img src="../img/头像/1.jpg" alt="">
+                </div>
+                
+                <div id="desc">
+                    <span id="title">Mr sxr的音乐空间</span>
+                    <p><span>喜欢</span><br><span>05</span></p>
+                    <p><span>数量</span><br><span>05</span></p>
+                    <p><span>粉丝</span><br><span>00</span></p>
+                </div>
+
+                <div id="qq_music">
+                    <img src="../img/music_log/qq_music2.png" alt="">
+                    <span>My QQ音乐</span>
+                </div>
+                <div id="music_imgs">
+                    <img src="../img/music_log/music2.png" alt="">
+                    <img src="../img/music_log/wechat.png" alt="">
+                    <img src="../img/music_log/music1.jpg" alt="">
+                    <img src="../img/music_log/yunMusic.png" alt="">
+                </div>
+
+                <div id="bc_theme" onclick="ChangeBackgrade('#535353')">
+                    
+                </div>
+
+            </div>
+
+            <div id="h1_left2">
+                <span id="tit">推荐MV</span>
+                <video src="../video/崖上的波妞.mp4" controls ></video>
+            </div>
+            <div id="h1_left3">
+                <div class="audio-views">
+                    <img src="../img/music/挪威的森林.png" alt="">
+                </div>
+                <div id="controller">
+                    <span id="c1"></span>
+                    <span id="c2"></span>
+                    <span id="c3"></span>
+                </div>
+                <ul id="one_ul">
+                    <li> 
+                      <audio id="audio1" src="../video/伍佰 - 挪威森林.mp3" controls >
+                    </li>
+                    <li>
+                        <audio id="audio2" >
+                    </li>
+                    <li>
+                        <audio id="audio3"  >
+                    </li>
+                    <li>
+                        <audio id="audio4" >
+                    </li>
+                    <li>
+                        <audio id="audio5">
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="h2">
+            <div id="h2_left1">
+                <ul>
+                    <span id="titl" >My Music</span>
+                    <div  onclick="PlayOrPause('audio1','../video/伍佰 - 挪威森林.mp3','../img/showImg/22.jpg','../img/music/挪威的森林.png')">
+
+                            <img src="../img/music/挪威的森林.png">
+
+                        <span class="name">挪威的森林</span>
+                        <span class="music_name">伍佰</span>
+                    </div>
+
+                    <div onclick="PlayOrPause('audio2','../video/蓝莲花_许巍.mp3','../img/showImg/2.jpg','../img/music/许巍.png')">
+                        <img src="../img/music/许巍.png" >           
+                        <span class="name">蓝莲花</span>
+                        <span class="music_name">许巍</span>
+                    </div>
+
+                    <div onclick="PlayOrPause('audio3','../video/陈奕迅-U 87-浮夸-128.mp3','../img/showImg/19.jpg','../img/music/陈奕迅2.png')">
+                        <img src="../img/music/陈奕迅2.png" >      
+                        <span class="name">浮夸</span>
+                        <span class="music_name">陈奕迅</span>
+                    </div>
+
+                    <div onclick="PlayOrPause('audio4','../video/泡沫_G.E.M.邓紫棋.mp3','../img/showImg/20.jpg','../img/music/邓紫棋4.png')">
+                        <img src="../img/music/邓紫棋4.png" >      
+                        <span class="name">泡沫</span>
+                        <span class="music_name">邓紫棋</span>
+                    </div>
+
+                    <div onclick="PlayOrPause('audio5','../video/陈奕迅 - 富士山下.mp3','../img/showImg/14.jpg','../img/music/陈奕迅.jpg')">
+                         <img src="../img/music/陈奕迅.jpg" >
+                        <span class="name">富士山下</span>
+                        <span class="music_name">陈奕迅</span>
+                    </div>
+                </ul>
+            </div>
+            <div id="h2_left2">
+                <span>MUSIC</span>
+                <img src="../img/showImg/1.jpg" alt="" id="h2_left2_img">
+            </div>
+        </div>
+    </div>
+
+
+        <!-- 侧边栏导航栏 -->
+        <div class="shell">
+            <a href="../pages/index.html" class="box"><i class="iconfont icon-home"></i><span> home</span></a>
+            <a href="../pages/music.html" class="box"><i class="iconfont icon-music"></i><span>music</span></a>
+            <a href="../pages/myPicture.html" class="box"><i class="iconfont icon-picture"></i><span>picture</span></a>
+            <a href="../pages/login.html" class="box"><i class="iconfont icon-login"></i><span>login</span></a>
+            <a href="#" class="box"><i class="iconfont icon-contact"></i><span>contact</span></a>
+        </div>
+        
+        <div class="gif"> <img src="../img/index_Img/iloli.gif" alt=""></div>
+
+    <script>
+
+        function PlayOrPause(audioId, musicUrl,showImg,headImg){
+
+            //清除所有setInterval
+            var  end = setInterval(function(){}, 100);
+            var start = (end - 100) > 0 ? end -100 : 0;
+            for(var i = start; i < end; i++)
+                {
+            clearInterval(i);
+            }
+ 
+            var audio = document.getElementById(audioId);
+            var img = document.getElementById("h2_left2_img");
+
+            // 音乐磁盘旋转
+            var audio_view = document.getElementsByClassName('audio-views')[0];
+            var num = 0; 
+
+            var time = 0;
+            clearInterval(time)
+            var audio_view_img = audio_view.getElementsByTagName('img')[0];
+            audio_view_img.src=headImg;
+            if(audio.paused){
+                document.getElementById(audioId).src=musicUrl;
+                document.getElementById(audioId).controls='controls'
+                for(var i =0;i<5;i++){
+                   var a= document.getElementsByTagName("audio");
+                   if(a[i].played && audio!=a[i]){
+                       a[i].pause();
+                       a[i].removeAttribute("controls")
+                   }
+                }
+
+                audio.play();
+                img.src=showImg
+                time = setInterval( startRotate, 10) //旋转
+            }else{
+
+                audio.pause();
+                audio.removeAttribute("controls")
+                audio.currentTime = 0;
+                img.src="../img/showImg/1.jpg"
+            }
+
+                function startRotate(){
+                    audio_view.style.transform = 'rotate(' + (num += 0.2) + 'deg)'
+                }
+
+        }
+
+        function ChangeBackgrade(bcColor){
+            // var bc = document.getElementById('bc_theme');
+            var h1_left1 = document.getElementById("h1_left1");
+            var h1_left2 = document.getElementById("h1_left2");
+            var h1_left3 = document.getElementById("h1_left3");
+            var h2_left1 = document.getElementById("h2_left1");
+            var h2_left2 = document.getElementById("h2_left2");
+
+
+            if(h1_left1.style.backgroundColor=="white"){
+                h1_left1.style.backgroundColor=bcColor;
+                h1_left2.style.backgroundColor=bcColor;
+                h1_left3.style.backgroundColor=bcColor;
+                h2_left1.style.backgroundColor=bcColor;
+                h2_left2.style.backgroundColor=bcColor;
+
+                document.getElementById("controller").style.backgroundColor='#656565';
+                document.getElementById("controller").style.boxShadow='none';
+
+                h1_left1.style.color='white';
+                h2_left1.style.color='white';
+                document.getElementById("desc").style.color="white";
+                document.getElementById("titl").style.color="white";
+                document.getElementById("tit").style.color="white";
+                
+                document.body.style.backgroundImage="linear-gradient(135deg, #254353, #00895e)";
+        
+            }else{
+                h1_left1.style.backgroundColor='white';
+                h1_left2.style.backgroundColor='white';
+                h1_left3.style.backgroundColor='white';
+                h2_left1.style.backgroundColor='white';
+                h2_left2.style.backgroundColor='white';
+                document.getElementById("controller").style.backgroundColor='white';
+                document.getElementById("controller").style.boxShadow=' 1px 1px 10px 1px rgb(157, 157, 157)';
+
+                document.getElementById("desc").style.color="black";
+                document.getElementById("titl").style.color="black";
+                document.getElementById("tit").style.color="black";
+                h1_left1.style.color='black';
+                h2_left1.style.color='black';
+
+                document.body.style.backgroundImage="linear-gradient(135deg, #727089, #c3565f)";
+            }
+        }
+
+
+
+    </script>
+
+</body>
+</html>

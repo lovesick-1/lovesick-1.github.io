@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?ykzif2');
+    src:  url('../fonts/icomoon.eot?ykzif2#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?ykzif2') format('truetype'),
+      url('../fonts/icomoon.woff?ykzif2') format('woff'),
+      url('../fonts/icomoon.svg?ykzif2#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+
+.shell {
+    position: fixed;
+    top: 100px;
+    width: 70px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(243, 244, 246);
+    border-radius: 10px;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.box {
+    display: block;
+    height: 15%;
+    width: 85%;
+    margin: 7px 0;
+    border-radius: 5px;
+    position: relative;
+    /* top: -15px; */
+    transition: .3s;
+    /* color: rgb(160, 160, 175); */
+    color: #000;
+}
+.box i {
+    font-size: 60px;
+    position: absolute;
+    margin: 7px 0 0 13px;
+}
+
+.box:nth-child(1)::before,
+.box:nth-child(4)::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(55, 65, 81);
+    position: absolute;
+    bottom: -10px;
+}
+
+.box span{
+    position: relative;
+    top: 12px;
+    left: 60px;
+    font: 500 20px '';
+    opacity: 0;
+    transition: .1s;
+}
+.shell:hover{
+    width: 170px;
+    /* width: 130px; */
+    
+}
+.box:hover{
+    /* background-color: rgb(55, 65, 81); */
+    background-color: rgb(209, 213, 219);
+    color: rgb(241, 159, 159);
+}
+.shell:hover span{
+    opacity: 1;
+}
+
+
+
+
+.iconfont {
+    font-family: "icomoon";
+    position: absolute;
+    top: -38px;
+    /* left: -3px; */
+    font-style: normal;
+
+  }
+
+.icon-home::before{
+    content: "\e900";   
+    font-size: 30px;
+}
+
+.icon-music::before{
+    content: "\e911";   
+    font-size: 30px;
+}
+.icon-picture::before{
+    content: "\e90e";   
+    font-size: 30px;
+}
+
+.icon-login::before{
+    content: "\e973";   
+    font-size: 30px;
+}
+.icon-contact::before{
+    content: "\e96f";   
+    font-size: 30px;
+}
+
+
+
+

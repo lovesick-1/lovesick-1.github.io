@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/picture.css">
+</head>
+<body>
+    <div class="all">
+        <!-- <div class="nav">
+            <span id="name">宋兴睿</span>
+            <div>
+                <ul>
+                    <li><a href="../pages/index.html"></a></li>
+                    <li><a href="../pages/music.html"></a></li>
+                    <li><a href="../pages/login.html"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+        </div> -->
+        <div class="image"><span>Image</span></div>
+        <!-- 轮播图 -->
+        <div id="container">
+            <ul class="parent" style="left: 0;">
+                
+                <li><img src="../img/picture/4.jpg"></li>
+                <li><img src="../img/index_Img/7.jpg"></li>
+                <li><img src="../img/picture/1.jpg"></li>
+                <li><img src="../img/picture/2.jpg"></li>
+
+                <li><img src="../img/picture/8.jpg"></li>
+
+            </ul>
+        
+            <div class="btnLeft">&lt;</div>
+            <div class="btnRight">&gt;</div>
+            <div class="modal">
+
+                <div class="dots">
+                    <ul class="clearfix">
+                        <li class="on"></li>
+                        <li class="off"></li>
+                        <li class="off"></li>
+                        <li class="off"></li>
+                        <li class="off"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="w">
+            <div class="myPic"><span>My picture</span></div>
+            <div class="pictures">
+                <div><div class="mask1"></div><div class="mask2"></div><img src="../img/picture/41.jpg" alt=""></div>
+                <div><div class="mask1"></div><div class="mask2"></div><img src="../img/picture/42.jpg" alt=""></div>
+                <div><div class="mask1"></div><div class="mask2"></div><img src="../img/picture/43.jpg" alt=""></div>
+                <div><div class="mask1"></div><div class="mask2"></div><img src="../img/picture/44.jpg" alt=""></div>
+                <div><div class="mask1"></div><div class="mask2"></div><img src="../img/picture/25.jpg" alt=""></div>
+                <div><div class="mask1"></div><div class="mask2"></div><img src="../img/picture/33.jpg" alt=""></div>
+                <div><div class="mask1"></div><div class="mask2"></div><img src="../img/picture/26.jpg" alt=""></div>
+                <div><div class="mask1"></div><div class="mask2"></div><img src="../img/picture/29.jpg" alt=""></div>
+                <div><div class="mask1"></div><div class="mask2"></div><img src="../img/picture/30.jpg" alt=""></div>
+                <div><div class="mask1"></div><div class="mask2"></div><img src="../img/picture/28.jpg" alt=""></div>
+                <div><div class="mask1"></div><div class="mask2"></div><img src="../img/picture/22.jpg" alt=""></div>
+                <div><div class="mask1"></div><div class="mask2"></div><img src="../img/picture/23.jpg" alt=""></div>
+
+            </div>
+        </div>
+
+
+    
+    </div>
+
+
+<script>
+        // 轮播图
+function lunbotu(){
+    var imgShow = document.getElementsByClassName('parent')[0],
+	dotList = document.querySelectorAll('.dots >.clearfix > li');
+var btnLeft = document.getElementsByClassName('btnLeft')[0],
+    btnRight = document.getElementsByClassName('btnRight')[0];
+var dotLen = dotList.length,
+	index = 0; //轮播层的图片索引，0表示第一张
+
+//圆点显示
+function showRadius() {
+	for(var i = 0; i < dotLen; i++) {
+		if(dotList[i].className === "on"){
+			dotList[i].className = "off";
+		}
+	}
+	dotList[index].className = "on";
+}
+
+//向左移动
+btnLeft.onclick = function() {
+	index--;
+    if(index < 0){  /*第1张向左时，变为第5张*/
+        index = 4;
+    }
+    showRadius();
+	var left;
+	var imgLeft = imgShow.style.left;
+	if(imgLeft === "0px") { /*当是第1张时，每张图片左移，移4张图，位置为-(4*500)*/
+		left = -5052;
+	}
+	else{
+		left = parseInt(imgLeft) + 1263; /*由于left为负数，每左移一张加500*/
+	}
+	imgShow.style.left = left + "px";
+}
+
+//向右移动
+btnRight.onclick = function() {
+	index++;
+    if(index > 4){  /*第5张向右时，变为第1张*/
+        index = 0;
+    }
+    showRadius();
+	var right;
+	var imgLeft = imgShow.style.left;
+	if(imgLeft === "-5052px") { /*当是第5张时，第1张的位置为0*/
+		right = 0;
+	}
+	else{
+		right = parseInt(imgLeft) - 1263; /*由于left为负数，每右移一张减500*/
+	}
+	imgShow.style.left = right + "px";
+}
+
+// 自动轮播
+var timer;
+function autoPlay() {
+	timer = setInterval(function() {
+		var right;
+		var imgLeft = imgShow.style.left;
+		if(imgLeft === "-6315px") {
+			right = 0;
+		}
+		else{
+			right = parseInt(imgLeft) - 1263;
+		}
+		imgShow.style.left = right + "px";
+	} ,8000)
+}
+autoPlay();
+
+for(var i = 0; i < dotLen; i++) {
+    /*利用闭包传递索引*/
+    (function(i) {
+        dotList[i].onclick = function() {
+	        var dis = index - i; //当前位置和点击的距离
+	        imgShow.style.left = (parseInt(imgShow.style.left) + dis * 1263) + "px";
+	        index = i; //显示当前位置的圆点
+	        showRadius();
+    	}
+    })(i);
+}
+}
+
+lunbotu();
+</script>
+
+</body>
+</html>

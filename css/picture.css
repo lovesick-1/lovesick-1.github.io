@@ -1,0 +1,191 @@
+.all{
+    width: 1263px;
+    height: 1600px;
+    background-color: #161724;
+}
+
+#container{
+    position: relative;
+    top: -20px;
+    width: 100%;
+    height: 500px;
+    margin: 20px auto;
+    overflow: hidden; /*溢出隐藏：只显示一张图片*/
+}
+#container .parent{
+    position: absolute;
+    /* 整个图片层长度：500*5=2500 */
+    width: 6315px;
+    height: 500px;
+}
+
+#container .parent li{
+    float: left;
+    width: 1263px;
+    height: 100%;
+}
+#container .parent li img{
+    width: 100%;
+    /* height: 100%; */
+    z-index: -1;/*置于底层*/
+}
+#container:hover .btnLeft,
+#container:hover .btnRight{
+    display: block;
+}
+
+#container .btnLeft,
+#container .btnRight{
+    display: none;
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, .3);
+    border-radius: 20%;
+    opacity: 80%;
+    position: absolute; /*包含块为图片显示层container*/
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+}
+#container .btnLeft{
+    left: 0px;
+}
+#container .btnRight{
+    right: 00px;
+}
+#container .btnLeft:hover,
+#container .btnRight:hover{
+    opacity: 90%;
+    cursor: pointer;
+    color: red;
+}
+
+#container .modal .dots{
+    float: right;
+    position: absolute;
+    bottom: 10px;
+    left: 540px;
+
+}
+#container .modal .dots li{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    /*可以使用行块盒*/
+    /*display: inline-block;*/
+    margin: 0 5px;
+    cursor: pointer;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.on{
+    background-color: #ffa923;
+}
+.off{
+    background: rgba(0, 0, 0, .3);
+}
+
+
+
+
+.w{
+    width: 1000px;
+    position: relative;
+    margin: 0 auto;
+}
+.myPic{
+    position: absolute;
+    width: 1000px;
+    background-color: #292c37;
+    margin: 0 auto;
+    height: 36px;
+    color: #fff;
+    font-size: 25px;
+    border-radius: 17px;
+}
+.myPic span{
+    position: absolute;
+    left: 425px;
+}
+.image{
+    position: absolute;/*设为绝对定位*/
+    z-index: 2;/*置于底层*/
+    left: 550px;
+    top: 200px;
+}
+.image span{
+    font-weight: 700;
+    color: #d6e1ea;
+    font-size: 45px;
+    z-index: 2;/*置于底层*/
+}
+
+.pictures{
+    position: absolute;
+    top: 50px;
+}
+.pictures>div{
+    position: relative;
+    width: 235px;
+    margin-right: 20px;
+    margin-top: 15px;
+    height: 245px;
+    background-color: #fff;
+    float: left;
+    border-radius: 20px;
+    overflow: hidden;
+    
+}
+.pictures>div:hover .mask1{
+    /* display: block; */
+    width: 100px;
+}
+.pictures>div:hover .mask2{
+    width: 60px;
+}
+
+.mask1 {
+    /* 隐藏遮罩层 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 245px;
+    background: rgba(233, 136, 92,.9)  no-repeat center;
+    z-index: 3;
+    transition:  width 1s;
+}
+.mask2 {
+    /* 隐藏遮罩层 */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 245px;
+    background: rgba(255, 91, 72,.8)  no-repeat center;
+    z-index: 4;
+    transition: width 1.5s;
+    transition-delay:0.3s;
+
+}
+.pictures img{
+    position: absolute;
+    top: -30px;
+    left: -10px;
+    width: 295px;
+    height: 285px;
+    border-radius: 20px;
+}
+.pictures>div:nth-child(4n){
+    margin-right: 0px;
+}
+
