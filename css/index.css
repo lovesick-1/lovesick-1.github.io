@@ -405,8 +405,8 @@ cursor: pointer;
 /* 动态图 */
 .gif img{
     position: absolute;
-    right: 220px;
-    top: 120px;
+    right: 95px;
+    top: 20px;
     width: 100px;
     /* height: 200px; */
 }
